@@ -1,0 +1,38 @@
+Table BookCategory {
+id int pk
+book_id int [ref: > Book.id]
+category_id int [ref: > Category.id]
+time_stamp int
+}
+
+Table Book {
+id int pk
+title varchar
+author varchar
+ISBN_number int
+cover_image_url varchar
+auth_user int [ref: > User.id]
+categories int 
+}
+
+Table Category {
+id int pk
+label varchar
+}
+
+Table User {
+id int pk
+first_name varchar
+last_name varchar
+email varchar
+username varchar
+}
+
+Table Reviews {
+id int pk
+book_id int [ref: > Book.id]
+auth_user int [ref: > User.id]
+rating int
+comment varchar
+date int 
+}
