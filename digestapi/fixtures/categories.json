@@ -1,0 +1,37 @@
+[
+    {
+        "model": "digestapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "Technology"
+        }
+    },
+    {
+        "model": "digestapi.category",
+        "pk": 2, 
+        "fields": {
+            "label": "Sports"
+        }
+    },
+    {
+        "model": "digestapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "Entertainment"
+        }
+    },
+    {
+        "model": "digestapi.category",
+        "pk": 4,
+        "fields": {
+            "label": "Science"
+        }
+    },
+    {
+        "model": "digestapi.category",
+        "pk": 5,
+        "fields": {
+            "label": "Travel"
+        }
+    }
+]

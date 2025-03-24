@@ -1,0 +1,50 @@
+[
+    {
+        "model": "digestapi.books",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "isbn_number": "9780446310789",
+            "cover_image": "https://example.com/mockingbird-cover.jpg",
+            "categories": []
+        }
+    },
+    {
+        "model": "digestapi.books",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "title": "1984",
+            "author": "George Orwell",
+            "isbn_number": "9780451524935",
+            "cover_image": "https://example.com/1984-cover.jpg",
+            "categories": []
+        }
+    },
+    {
+        "model": "digestapi.books",
+        "pk": 3,
+        "fields": {
+            "user": 2,
+            "title": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "isbn_number": "9780141439518",
+            "cover_image": "https://example.com/pride-prejudice-cover.jpg",
+            "categories": []
+        }
+    },
+    {
+        "model": "digestapi.books",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "title": "The Hitchhiker's Guide to the Galaxy",
+            "author": "Douglas Adams",
+            "isbn_number": "9780345391803",
+            "cover_image": null,
+            "categories": []
+        }
+    }
+]
