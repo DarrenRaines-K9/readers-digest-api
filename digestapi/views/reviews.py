@@ -2,17 +2,18 @@ from rest_framework import viewsets, status, serializers, permissions
 from rest_framework.response import Response
 from digestapi.models import Reviews
 
+
 class ReviewSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
 
     class Meta:
         model = Reviews
-        fields = ['id', 'book', 'user', 'rating', 'comment', 'date_posted', 'is_owner']
-        read_only_fields = ['user']
+        fields = ["id", "book", "user", "rating", "comment", "date", "is_owner"]
+        read_only_fields = ["user"]
 
     def get_is_owner(self, obj):
         # Check if the user is the owner of the review
-        return self.context['request'].user == obj.user
+        return self.context["request"].user == obj.user
 
 
 class ReviewViewSet(viewsets.ViewSet):
@@ -22,24 +23,28 @@ class ReviewViewSet(viewsets.ViewSet):
         # Get all reviews
         reviews = Reviews.objects.all()
         # Serialize the objects, and pass request to determine owner
-        serializer = ReviewSerializer(reviews, many=True, context={'request': request})
+        serializer = ReviewSerializer(reviews, many=True, context={"request": request})
         # Return the serialized data with 200 status code
         return Response(serializer.data)
 
     def create(self, request):
         # Create a new instance of a review and assign property
         # values from the request payload using `request.data`
-
-
+        rating = request.data("rating")
+        comment = request.data("comment")
+        date = request.data("date")
         # Save the review
-
+        review = Reviews.objects.create(
+            user=request.user, rating=rating, comment=comment, date=date
+        )
         try:
+            review.save()
             # Serialize the objects, and pass request as context
-
+            serializer = ReviewSerializer(review, context={"request": request})
             # Return the serialized data with 201 status code
-
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
-            return Response(None, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
         try:

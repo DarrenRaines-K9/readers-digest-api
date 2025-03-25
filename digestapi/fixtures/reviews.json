@@ -1,0 +1,57 @@
+[
+    {
+        "model": "digestapi.reviews",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "book": 1,
+            "rating": 4.5,
+            "comment": "Great book! Highly recommended.",
+            "date": "2025-03-20"
+        }
+    },
+    {
+        "model": "digestapi.reviews",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "book": 2,
+            "rating": 3.0,
+            "comment": "It was an okay read, but not my favorite.",
+            "date": "2025-03-18"
+        }
+    },
+    {
+        "model": "digestapi.reviews",
+        "pk": 3,
+        "fields": {
+            "user": 2,
+            "book": 1,
+            "rating": 5.0,
+            "comment": "Absolutely loved it! A masterpiece.",
+            "date": "2025-03-15"
+        }
+    },
+    {
+        "model": "digestapi.reviews",
+        "pk": 4,
+        "fields": {
+            "user": 1,
+            "book": 3,
+            "rating": 2.5,
+            "comment": "Not what I expected, a bit disappointing.",
+            "date": "2025-03-10"
+        }
+    },
+    {
+        "model": "digestapi.reviews",
+        "pk": 5,
+        "fields": {
+            "user": 2,
+            "book": 2,
+            "rating": 4.0,
+            "comment": "Well written and engaging.",
+            "date": "2025-03-05"
+        }
+    }
+]
